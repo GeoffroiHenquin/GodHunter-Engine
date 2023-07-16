@@ -1,5 +1,4 @@
 #include "Application.h"
-#include <stdio.h>
 
 namespace GodHunter {
 
@@ -13,7 +12,6 @@ namespace GodHunter {
 
 	void Application::Run()
 	{
-		printf("It's working");
 		while (true);
 	}
 
