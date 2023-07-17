@@ -1,4 +1,5 @@
 #include "Application.h"
+#include <thread>
 
 namespace GodHunter {
 
@@ -12,7 +13,22 @@ namespace GodHunter {
 
 	void Application::Run()
 	{
-		while (true);
+		// Get Data from Sandbox
+		
+		// Setup all components of the engine
+		
+		// Game Loop
+		while (true) {
+			// GAME TIMING =============================================
+			std::this_thread::sleep_for(std::chrono::milliseconds(50));
+			
+			// PLAYER INPUT ============================================
+			
+			// GAME LOGIC ==============================================
+			
+			// RENDER OUTPUT ===========================================
+
+		}
 	}
 
 }
