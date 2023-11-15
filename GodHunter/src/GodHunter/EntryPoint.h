@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef GH_PLATFORM_WINDOWS
+#include "Application.h"
 
 extern GodHunter::Application* GodHunter::CreateApplication();
 int main(int argc, char** argv)
@@ -9,5 +9,3 @@ int main(int argc, char** argv)
 	app->Run();
 	delete app;
 }
-
-#endif

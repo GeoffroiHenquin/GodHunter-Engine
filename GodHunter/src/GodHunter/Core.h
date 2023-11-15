@@ -1,7 +1,7 @@
 #pragma once
 
-#ifdef GH_PLATFORM_WINDOWS
-# ifdef GH_BUILD_SHAREDLIB
+#ifdef _WIN32
+# ifdef BUILD_SHAREDLIB
 #   define GODHUNTER_API  __declspec( dllexport )
 # else
 #   define GODHUNTER_API  __declspec( dllimport )

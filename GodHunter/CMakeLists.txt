@@ -18,3 +18,4 @@ endif()
 
 # TODO: Add tests and install targets if needed.
 target_link_libraries(GodHunter SDL2::SDL2 SDL2::SDL2main)
+add_compile_definitions(BUILD_SHAREDLIB)
