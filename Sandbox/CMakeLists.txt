@@ -11,3 +11,4 @@ endif()
 
 # TODO: Add tests and install targets if needed.
 include_directories(${PROJECT_SOURCE_DIR}/../GodHunter/src ${COMMON_INCLUDES})
+target_link_libraries(Sandbox GodHunter)
