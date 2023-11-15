@@ -34,3 +34,6 @@
 # Compressed files
 *.zip
 *.tar.gz
+
+# out directory
+out/
