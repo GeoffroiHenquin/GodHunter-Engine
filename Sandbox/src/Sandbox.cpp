@@ -5,7 +5,7 @@ class Sandbox : public GodHunter::Application
 public:
 	Sandbox()
 	{
-
+		gameDisplayInfo = { (char*)"MyGame", 800, 600, false, true, true };
 	}
 	~Sandbox()
 	{

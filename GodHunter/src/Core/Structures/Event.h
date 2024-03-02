@@ -1,0 +1,78 @@
+#pragma once
+
+namespace GodHunter {
+
+	enum EventType {
+		GH_DEFAULT = 0,
+		// Application events
+		GH_QUIT = 1,
+		// Android, iOS and WinRT events
+		GH_APP_TERMINATING = 2,
+		GH_APP_LOWMEMORY = 3,
+		GH_APP_WILLENTERBACKGROUND = 4,
+		GH_APP_DIDENTERBACKGROUND = 5,
+		GH_APP_WILLENTERFOREGROUND = 6,
+		GH_APP_DIDENTERFOREGROUND = 7,
+		GH_LOCALECHANGED = 8,
+		// Display events
+		GH_DISPLAYEVENT = 9,
+		// Window events
+		GH_WINDOWEVENT = 10,
+		GH_SYSWMEVENT = 11,
+		// Keyboard events
+		GH_KEYDOWN = 12,
+		GH_KEYUP = 13,
+		GH_TEXTEDITING = 14,
+		GH_TEXTINPUT = 15,
+		GH_KEYMAPCHANGED = 16,
+		// Mouse events
+		GH_MOUSEMOTION = 17,
+		GH_MOUSEBUTTONDOWN = 18,
+		GH_MOUSEBUTTONUP = 19,
+		GH_MOUSEWHEEL = 20,
+		// Joystick events
+		GH_JOYAXISMOTION = 21,
+		GH_JOYBALLMOTION = 22,
+		GH_JOYHATMOTION = 23,
+		GH_JOYBUTTONDOWN = 24,
+		GH_JOYBUTTONUP = 25,
+		GH_JOYDEVICEADDED = 26,
+		GH_JOYDEVICEREMOVED = 27,
+		// Controller events
+		GH_CONTROLLERAXISMOTION = 28,
+		GH_CONTROLLERBUTTONDOWN = 29,
+		GH_CONTROLLERBUTTONUP = 30,
+		GH_CONTROLLERDEVICEADDED = 31,
+		GH_CONTROLLERDEVICEREMOVED = 32,
+		GH_CONTROLLERDEVICEREMAPPED = 33,
+		// Touch events
+		GH_FINGERDOWN = 34,
+		GH_FINGERUP = 35,
+		GH_FINGERMOTION = 36,
+		// Gesture events
+		GH_DOLLARGESTURE = 37,
+		GH_DOLLARRECORD = 38,
+		GH_MULTIGESTURE = 39,
+		// Clipboard events
+		GH_CLIPBOARDUPDATE = 40,
+		// Drag and drop events
+		GH_DROPFILE = 41,
+		GH_DROPTEXT = 42,
+		GH_DROPBEGIN = 43,
+		GH_DROPCOMPLETE = 44,
+		// Audio hotplug events
+		GH_AUDIODEVICEADDED = 45,
+		GH_AUDIODEVICEREMOVED = 46,
+		// Render events
+		GH_RENDER_TARGETS_RESET = 47,
+		GH_RENDER_DEVICE_RESET = 48,
+		// These are for your use, and should be allocated with SDL_RegisterEvents()
+		GH_USEREVENT = 49,
+		GH_LASTEVENT = 50
+	};
+
+	struct Event {
+
+	};
+
+}

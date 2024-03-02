@@ -1,4 +1,4 @@
-﻿# CMakeList.txt : CMake project for ShootEmUp, include source and define
+﻿# CMakeList.txt : CMake project for Sandbox, include source and define
 # project specific logic here.
 #
 
@@ -12,3 +12,8 @@ endif()
 # TODO: Add tests and install targets if needed.
 include_directories(${PROJECT_SOURCE_DIR}/../GodHunter/src ${COMMON_INCLUDES})
 target_link_libraries(Sandbox GodHunter)
+
+add_custom_command(TARGET Sandbox POST_BUILD
+               COMMAND ${CMAKE_COMMAND} -E copy_if_different
+               $<TARGET_FILE:GodHunter>              
+               $<TARGET_FILE_DIR:Sandbox>)
