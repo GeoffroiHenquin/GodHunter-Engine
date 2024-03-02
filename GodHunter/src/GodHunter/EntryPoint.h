@@ -6,6 +6,10 @@ extern GodHunter::Application* GodHunter::CreateApplication();
 int main(int argc, char** argv)
 {
 	auto app = GodHunter::CreateApplication();
-	app->Run();
+	
+	app->run();
+	
 	delete app;
+
+	return 0;
 }
