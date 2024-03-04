@@ -21,7 +21,9 @@ add_library(GodHunter SHARED
 "src/Core/OsSpecific/OsSpecificSystem.cpp"
 "src/Core/Structures/WindowInformation.h"
 "src/Core/Structures/Color.h"
-"src/Core/Structures/Event.h")
+"src/Core/Structures/Event.h" 
+"src/Core/Debug/Logger.h" 
+"src/Core/Debug/Logger.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET GodHunter PROPERTY CXX_STANDARD 20)

@@ -7,6 +7,8 @@
 #include <chrono>
 #include <iostream>
 
+#include "../Core/Debug/Logger.h"
+
 namespace GodHunter {
 
 	Application::Application()
@@ -19,6 +21,7 @@ namespace GodHunter {
 
 	void Application::run()
 	{
+		Debug::LOG_TRACE("Started Running GodHunter Engine")
 		// Init Engine
 		OsSpecific::InitOsSpecificSystems();
 
@@ -71,6 +74,7 @@ namespace GodHunter {
 
 		// End Main
 		OsSpecific::CloseOsSpecificSystems();
+		Debug::LOG_WARN("Stopped Running GodHunter Engine")
 	}
 
 }
