@@ -3,7 +3,7 @@
 #include "Core.h"
 
 // Required to Handle various task such as Display,input,sound,etc
-#include "Core/OsSpecific/OsSpecificSystem.h"
+#include "../Core/OsSpecific/OsSpecificSystem.h"
 
 namespace GodHunter {
 

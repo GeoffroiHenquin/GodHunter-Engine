@@ -1,7 +1,7 @@
 #include "Application.h"
 
 // To Be Removed when the other systems are done
-#include <SDL.h>
+#include <SDL3/SDL.h>
 
 // Used to evaluate performances
 #include <chrono>
@@ -48,7 +48,7 @@ namespace GodHunter {
 			SDL_Event event;
 			SDL_PollEvent(&event);
 			switch (event.type) {
-			case SDL_QUIT:
+			case SDL_EVENT_QUIT:
 				isRunning = false;
 				break;
 			default:

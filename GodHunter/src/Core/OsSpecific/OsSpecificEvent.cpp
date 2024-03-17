@@ -1,7 +1,7 @@
 #include "OsSpecificSystem.h"
 
 #define SDL_MAIN_HANDLED
-#include <SDL.h>
+#include <SDL3/SDL.h>
 
 namespace GodHunter {
 
@@ -12,119 +12,104 @@ namespace GodHunter {
 			while (SDL_PollEvent(&event)) {
 				switch (event.type) {
 					// Application events
-				case SDL_QUIT:
+				case SDL_EVENT_QUIT:
 					break;
 					// Android, iOS and WinRT events
-				case SDL_APP_TERMINATING:
+				case SDL_EVENT_TERMINATING:
 					break;
-				case SDL_APP_LOWMEMORY:
+				case SDL_EVENT_LOW_MEMORY:
 					break;
-				case SDL_APP_WILLENTERBACKGROUND:
+				case SDL_EVENT_WILL_ENTER_BACKGROUND:
 					break;
-				case SDL_APP_DIDENTERBACKGROUND:
+				case SDL_EVENT_DID_ENTER_BACKGROUND:
 					break;
-				case SDL_APP_WILLENTERFOREGROUND:
+				case SDL_EVENT_WILL_ENTER_FOREGROUND:
 					break;
-				case SDL_APP_DIDENTERFOREGROUND:
+				case SDL_EVENT_DID_ENTER_FOREGROUND:
 					break;
-				case SDL_LOCALECHANGED:
-					break;
-					// Display events
-				case SDL_DISPLAYEVENT:
-					break;
-					// Window events
-				case SDL_WINDOWEVENT:
-					break;
-				case SDL_SYSWMEVENT:
+				case SDL_EVENT_LOCALE_CHANGED:
 					break;
 					// Keyboard events
-				case SDL_KEYDOWN:
+				case SDL_EVENT_KEY_DOWN:
 					break;
-				case SDL_KEYUP:
+				case SDL_EVENT_KEY_UP:
 					break;
-				case SDL_TEXTEDITING:
+				case SDL_EVENT_TEXT_EDITING:
 					break;
-				case SDL_TEXTINPUT:
+				case SDL_EVENT_TEXT_INPUT:
 					break;
-				case SDL_KEYMAPCHANGED:
+				case SDL_EVENT_KEYMAP_CHANGED:
 					break;
 					// Mouse events
-				case SDL_MOUSEMOTION:
+				case SDL_EVENT_MOUSE_MOTION:
 					break;
-				case SDL_MOUSEBUTTONDOWN:
+				case SDL_EVENT_MOUSE_BUTTON_DOWN:
 					break;
-				case SDL_MOUSEBUTTONUP:
+				case SDL_EVENT_MOUSE_BUTTON_UP:
 					break;
-				case SDL_MOUSEWHEEL:
+				case SDL_EVENT_MOUSE_WHEEL:
 					break;
 					// Joystick events
-				case SDL_JOYAXISMOTION:
+				case SDL_EVENT_JOYSTICK_AXIS_MOTION:
 					break;
-				case SDL_JOYBALLMOTION:
+				case SDL_EVENT_JOYSTICK_BALL_MOTION:
 					break;
-				case SDL_JOYHATMOTION:
+				case SDL_EVENT_JOYSTICK_HAT_MOTION:
 					break;
-				case SDL_JOYBUTTONDOWN:
+				case SDL_EVENT_JOYSTICK_BUTTON_DOWN:
 					break;
-				case SDL_JOYBUTTONUP:
+				case SDL_EVENT_JOYSTICK_BUTTON_UP:
 					break;
-				case SDL_JOYDEVICEADDED:
+				case SDL_EVENT_JOYSTICK_ADDED:
 					break;
-				case SDL_JOYDEVICEREMOVED:
+				case SDL_EVENT_JOYSTICK_REMOVED:
 					break;
 					// Controller events
-				case SDL_CONTROLLERAXISMOTION:
+				case SDL_EVENT_GAMEPAD_AXIS_MOTION:
 					break;
-				case SDL_CONTROLLERBUTTONDOWN:
+				case SDL_EVENT_GAMEPAD_BUTTON_DOWN:
 					break;
-				case SDL_CONTROLLERBUTTONUP:
+				case SDL_EVENT_GAMEPAD_BUTTON_UP:
 					break;
-				case SDL_CONTROLLERDEVICEADDED:
+				case SDL_EVENT_GAMEPAD_ADDED:
 					break;
-				case SDL_CONTROLLERDEVICEREMOVED:
+				case SDL_EVENT_GAMEPAD_REMOVED:
 					break;
-				case SDL_CONTROLLERDEVICEREMAPPED:
+				case SDL_EVENT_GAMEPAD_REMAPPED:
 					break;
 					// Touch events
-				case SDL_FINGERDOWN:
+				case SDL_EVENT_FINGER_DOWN:
 					break;
-				case SDL_FINGERUP:
+				case SDL_EVENT_FINGER_UP:
 					break;
-				case SDL_FINGERMOTION:
-					break;
-					// Gesture events
-				case SDL_DOLLARGESTURE:
-					break;
-				case SDL_DOLLARRECORD:
-					break;
-				case SDL_MULTIGESTURE:
+				case SDL_EVENT_FINGER_MOTION:
 					break;
 					// Clipboard events
-				case SDL_CLIPBOARDUPDATE:
+				case SDL_EVENT_CLIPBOARD_UPDATE:
 					break;
 					// Drag and drop events
-				case SDL_DROPFILE:
+				case SDL_EVENT_DROP_FILE:
 					break;
-				case SDL_DROPTEXT:
+				case SDL_EVENT_DROP_TEXT:
 					break;
-				case SDL_DROPBEGIN:
+				case SDL_EVENT_DROP_BEGIN:
 					break;
-				case SDL_DROPCOMPLETE:
+				case SDL_EVENT_DROP_COMPLETE:
 					break;
 					// Audio hotplug events
-				case SDL_AUDIODEVICEADDED:
+				case SDL_EVENT_AUDIO_DEVICE_ADDED:
 					break;
-				case SDL_AUDIODEVICEREMOVED:
+				case SDL_EVENT_AUDIO_DEVICE_REMOVED:
 					break;
 					// Render events
-				case SDL_RENDER_TARGETS_RESET:
+				case SDL_EVENT_RENDER_TARGETS_RESET:
 					break;
-				case SDL_RENDER_DEVICE_RESET:
+				case SDL_EVENT_RENDER_DEVICE_RESET:
 					break;
 					// These are for your use, and should be allocated with SDL_RegisterEvents()
-				case SDL_USEREVENT:
+				case SDL_EVENT_USER:
 					break;
-				case SDL_LASTEVENT:
+				case SDL_EVENT_LAST:
 					break;
 				default:
 					break;

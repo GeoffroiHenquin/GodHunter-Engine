@@ -2,7 +2,8 @@
 # project specific logic here.
 #
 
-find_package(SDL2 REQUIRED)
+#find_package(SDL2 REQUIRED)
+
 
 # Add source to this project's executable.
 add_library(GodHunter SHARED 
@@ -30,5 +31,10 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
 endif()
 
 # TODO: Add tests and install targets if needed.
-target_link_libraries(GodHunter SDL2::SDL2 SDL2::SDL2main)
+
+# Add definition for GodHunter to know that it is a shared library
 add_compile_definitions(BUILD_SHAREDLIB)
+
+# Linking with SDL
+include_directories(${PROJECT_SOURCE_DIR}/vendor/sdl/SDL/include ${COMMON_INCLUDES})
+target_link_libraries(GodHunter SDL3-static)

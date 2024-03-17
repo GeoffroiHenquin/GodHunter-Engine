@@ -1,7 +1,7 @@
 #include "OsSpecificSystem.h"
 
 #define SDL_MAIN_HANDLED
-#include <SDL.h>
+#include <SDL3/SDL.h>
 
 #include <vector>
 
@@ -47,8 +47,8 @@ namespace GodHunter {
 				flags = flags | SDL_WINDOW_RESIZABLE;
 			}
 			// Create Window
-			modelDisplay.window = SDL_CreateWindow(_information.title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _information.width, _information.height, flags);
-			modelDisplay.renderer = SDL_CreateRenderer(modelDisplay.window, -1, 0);
+			modelDisplay.window = SDL_CreateWindow(_information.title, _information.width, _information.height, flags);
+			modelDisplay.renderer = SDL_CreateRenderer(modelDisplay.window, NULL, 0);
 
 			displayList.push_back(modelDisplay);
 		}
