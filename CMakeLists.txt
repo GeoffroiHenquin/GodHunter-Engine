@@ -12,6 +12,11 @@ endif()
 project ("GodHunter")
 
 # Include sub-projects.
-include_directories(${CMAKE_SOURCE_DIR}/GodHunter/src ${COMMON_INCLUDES})
+
+# SDL3
+set(SDL_SHARED OFF)
+set(SDL_STATIC ON)
+add_subdirectory(vendor/sdl/SDL)
+
 add_subdirectory ("GodHunter")
 add_subdirectory ("Sandbox")
