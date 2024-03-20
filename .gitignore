@@ -37,3 +37,4 @@
 
 # out directory
 out/
+*.tar
