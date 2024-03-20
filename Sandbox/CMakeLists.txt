@@ -15,8 +15,20 @@ endif()
 include_directories(${PROJECT_SOURCE_DIR}/GodHunter/src ${COMMON_INCLUDES})
 target_link_libraries(Sandbox GodHunter)
 
+# Create a tar archive for the assets
+file(ARCHIVE_CREATE
+    OUTPUT "${CMAKE_CURRENT_SOURCE_DIR}/assets.tar"
+    PATHS 
+        "${CMAKE_CURRENT_SOURCE_DIR}/assets/"
+    FORMAT "gnutar")
+
 # Copy GodHunter to Sandbox
 add_custom_command(TARGET Sandbox POST_BUILD
                COMMAND ${CMAKE_COMMAND} -E copy_if_different
                $<TARGET_FILE:GodHunter>              
+               $<TARGET_FILE_DIR:Sandbox>)
+
+add_custom_command(TARGET Sandbox POST_BUILD
+               COMMAND ${CMAKE_COMMAND} -E copy_if_different
+               "${CMAKE_CURRENT_SOURCE_DIR}/assets.tar"
                $<TARGET_FILE_DIR:Sandbox>)
