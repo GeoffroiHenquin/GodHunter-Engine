@@ -18,8 +18,7 @@ namespace GodHunter {
 		OsSpecific::InitOsSpecificSystems();
 
 		// Create a Window
-		OsSpecific::CreateDisplay((char*)"main", gameDisplayInfo);
-		OsSpecific::SelectDisplay((char*)"main");
+		OsSpecific::CreateDisplay(gameDisplayInfo);
 		return 0;
 	}
 
