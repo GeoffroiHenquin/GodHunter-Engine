@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "Engine.h"
 
 // To Be Removed when the other systems are done
 #include <SDL3/SDL.h>
@@ -8,41 +8,37 @@
 #include <iostream>
 
 #include "../Core/Debug/Logger.h"
+#include "../Core/OsSpecific/OsSpecificSystem.h"
 
 namespace GodHunter {
 
-	Application::Application()
-	{
-	}
-
-	Application::~Application()
-	{
-	}
-
-	void Application::run()
-	{
-		Debug::LOG_TRACE("Started Running GodHunter Engine")
+	int startEngine(WindowInformation gameDisplayInfo) {
+		//Debug::LOG_TRACE("Started Running GodHunter Engine")
 		// Init Engine
 		OsSpecific::InitOsSpecificSystems();
 
 		// Create a Window
 		OsSpecific::CreateDisplay((char*)"main", gameDisplayInfo);
 		OsSpecific::SelectDisplay((char*)"main");
+		return 0;
+	}
+
+	int runEngine() {
 
 		// Main Loop
-		isRunning = true;
+		bool isRunning = true;
 		while (isRunning) {
 
 
 			// Begin test for performance
 			// To remove later
 			// ------------------------------------------------------------------------------------------------
-			auto beg = std::chrono::high_resolution_clock::now();
+			//auto beg = std::chrono::high_resolution_clock::now();
 			// ------------------------------------------------------------------------------------------------
 
 
 			// Handle scene change
-			
+
 			// Handle user input
 			//OsSpecific::HandleEvents();
 			SDL_Event event;
@@ -66,16 +62,20 @@ namespace GodHunter {
 			// End test for performance
 			// To remove later
 			// ------------------------------------------------------------------------------------------------
-			auto end = std::chrono::high_resolution_clock::now();
-			auto duration = duration_cast<std::chrono::microseconds>(end - beg);
+			//auto end = std::chrono::high_resolution_clock::now();
+			//auto duration = duration_cast<std::chrono::microseconds>(end - beg);
 			//std::cout << "FPS: " << 1000000 / duration.count() << "\n";
 			// ------------------------------------------------------------------------------------------------
 		}
+		
+		return 0;
+	}
 
+	int stopEngine() {
 		// End Main
 		OsSpecific::CloseOsSpecificSystems();
-		Debug::LOG_WARN("Stopped Running GodHunter Engine")
+		//Debug::LOG_WARN("Stopped Running GodHunter Engine")
+		return 0;
 	}
 
 }
-
