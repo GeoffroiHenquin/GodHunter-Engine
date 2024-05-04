@@ -2,7 +2,6 @@
 
 // For use by GodHunter application
 
-#include "GodHunter/Application.h"
+#include "GodHunter/Engine.h"
 
-// -- Entry point -----------------
-#include "GodHunter/EntryPoint.h"
+#include "Core/Structures/WindowInformation.h"

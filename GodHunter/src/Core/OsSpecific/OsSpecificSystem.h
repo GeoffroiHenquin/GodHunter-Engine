@@ -12,10 +12,9 @@ namespace GodHunter {
 		void CloseOsSpecificSystems();
 
 		// Os Specific Display
-		void CreateDisplay(char* _displayID);
-		void CreateDisplay(char* _displayID, WindowInformation& _information);
-		void DestroyDisplay(char* _displayID);
-		void SelectDisplay(char* _displayID);
+		void CreateDisplay();
+		void CreateDisplay(WindowInformation& _information);
+		void DestroyDisplay();
 
 		void SetDisplayName(const char* _name);
 

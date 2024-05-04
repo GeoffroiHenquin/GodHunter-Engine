@@ -6,15 +6,9 @@
 
 
 # Add source to this project's executable.
-add_library(GodHunter SHARED 
+add_library(GodHunter STATIC 
 "src/GodHunter.h"
-"src/GodHunter/Application.h"
-"src/GodHunter/Application.cpp"
-"src/GodHunter/Core.h"
-"src/GodHunter/EntryPoint.h" 
 "src/Core/OsSpecific/OsSpecificSystem.h"
-"src/Core/EntitySystem/EntitySystem.h"
-"src/Core/EntitySystem/EntitySystem.cpp"
 "src/Core/OsSpecific/OsSpecificClock.cpp"
 "src/Core/OsSpecific/OsSpecificDisplay.cpp"
 "src/Core/OsSpecific/OsSpecificEvent.cpp"
@@ -24,7 +18,9 @@ add_library(GodHunter SHARED
 "src/Core/Structures/Color.h"
 "src/Core/Structures/Event.h" 
 "src/Core/Debug/Logger.h" 
-"src/Core/Debug/Logger.cpp")
+"src/Core/Debug/Logger.cpp" 
+"src/GodHunter/Engine.h" 
+"src/GodHunter/Engine.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET GodHunter PROPERTY CXX_STANDARD 20)
