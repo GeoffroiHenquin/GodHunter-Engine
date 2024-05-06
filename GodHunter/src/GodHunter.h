@@ -1,7 +1,10 @@
 #pragma once
 
-// For use by GodHunter application
-
+// GodHunter Engine
 #include "GodHunter/Engine.h"
 
-#include "Core/Structures/WindowInformation.h"
+// Core
+#include "Core/Core.h"
+
+// Debug
+#include "Debug/Debug.h"

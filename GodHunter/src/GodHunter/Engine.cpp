@@ -7,13 +7,12 @@
 #include <chrono>
 #include <iostream>
 
-#include "../Core/Debug/Logger.h"
-#include "../Core/OsSpecific/OsSpecificSystem.h"
+#include "../Debug/Debug.h"
+#include "../Core/Core.h"
 
 namespace GodHunter {
 
 	int startEngine(WindowInformation gameDisplayInfo) {
-		//Debug::LOG_TRACE("Started Running GodHunter Engine")
 		// Init Engine
 		OsSpecific::InitOsSpecificSystems();
 
@@ -27,16 +26,6 @@ namespace GodHunter {
 		// Main Loop
 		bool isRunning = true;
 		while (isRunning) {
-
-
-			// Begin test for performance
-			// To remove later
-			// ------------------------------------------------------------------------------------------------
-			//auto beg = std::chrono::high_resolution_clock::now();
-			// ------------------------------------------------------------------------------------------------
-
-
-			// Handle scene change
 
 			// Handle user input
 			//OsSpecific::HandleEvents();
@@ -56,15 +45,7 @@ namespace GodHunter {
 
 			// Delay before next frame
 			OsSpecific::Delay(50);
-
-
-			// End test for performance
-			// To remove later
-			// ------------------------------------------------------------------------------------------------
-			//auto end = std::chrono::high_resolution_clock::now();
-			//auto duration = duration_cast<std::chrono::microseconds>(end - beg);
-			//std::cout << "FPS: " << 1000000 / duration.count() << "\n";
-			// ------------------------------------------------------------------------------------------------
+			Debug::countFPS();
 		}
 		
 		return 0;
@@ -73,7 +54,6 @@ namespace GodHunter {
 	int stopEngine() {
 		// End Main
 		OsSpecific::CloseOsSpecificSystems();
-		//Debug::LOG_WARN("Stopped Running GodHunter Engine")
 		return 0;
 	}
 
