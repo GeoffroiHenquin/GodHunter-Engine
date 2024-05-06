@@ -7,13 +7,12 @@
 #include <chrono>
 #include <iostream>
 
-#include "../Core/Debug/Logger.h"
+#include "../Debug/Logger.h"
 #include "../Core/OsSpecific/OsSpecificSystem.h"
 
 namespace GodHunter {
 
 	int startEngine(WindowInformation gameDisplayInfo) {
-		//Debug::LOG_TRACE("Started Running GodHunter Engine")
 		// Init Engine
 		OsSpecific::InitOsSpecificSystems();
 
@@ -73,7 +72,6 @@ namespace GodHunter {
 	int stopEngine() {
 		// End Main
 		OsSpecific::CloseOsSpecificSystems();
-		//Debug::LOG_WARN("Stopped Running GodHunter Engine")
 		return 0;
 	}
 

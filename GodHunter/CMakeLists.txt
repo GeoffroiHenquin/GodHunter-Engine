@@ -17,16 +17,22 @@ add_library(GodHunter STATIC
 "src/Core/Structures/WindowInformation.h"
 "src/Core/Structures/Color.h"
 "src/Core/Structures/Event.h" 
-"src/Core/Debug/Logger.h" 
-"src/Core/Debug/Logger.cpp" 
+"src/Debug/Logger.h" 
+"src/Debug/Logger.cpp" 
 "src/GodHunter/Engine.h" 
-"src/GodHunter/Engine.cpp")
+"src/GodHunter/Engine.cpp"  )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET GodHunter PROPERTY CXX_STANDARD 20)
 endif()
 
 # TODO: Add tests and install targets if needed.
+
+target_compile_definitions(GodHunter
+    PRIVATE
+        # If the debug configuration pass the DEBUG define to the compiler 
+        $<$<CONFIG:Debug>:DEBUG>
+)
 
 # Add definition for GodHunter to know that it is a shared library
 add_compile_definitions(BUILD_SHAREDLIB)
