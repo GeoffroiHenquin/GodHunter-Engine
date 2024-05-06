@@ -20,7 +20,7 @@ add_library(GodHunter STATIC
 "src/Debug/Logger.h" 
 "src/Debug/Logger.cpp" 
 "src/GodHunter/Engine.h" 
-"src/GodHunter/Engine.cpp"  )
+"src/GodHunter/Engine.cpp"   "src/Debug/FrameRate.h" )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET GodHunter PROPERTY CXX_STANDARD 20)

@@ -8,6 +8,7 @@
 #include <iostream>
 
 #include "../Debug/Logger.h"
+#include "../Debug/FrameRate.h"
 #include "../Core/OsSpecific/OsSpecificSystem.h"
 
 namespace GodHunter {
@@ -27,16 +28,6 @@ namespace GodHunter {
 		bool isRunning = true;
 		while (isRunning) {
 
-
-			// Begin test for performance
-			// To remove later
-			// ------------------------------------------------------------------------------------------------
-			//auto beg = std::chrono::high_resolution_clock::now();
-			// ------------------------------------------------------------------------------------------------
-
-
-			// Handle scene change
-
 			// Handle user input
 			//OsSpecific::HandleEvents();
 			SDL_Event event;
@@ -55,15 +46,7 @@ namespace GodHunter {
 
 			// Delay before next frame
 			OsSpecific::Delay(50);
-
-
-			// End test for performance
-			// To remove later
-			// ------------------------------------------------------------------------------------------------
-			//auto end = std::chrono::high_resolution_clock::now();
-			//auto duration = duration_cast<std::chrono::microseconds>(end - beg);
-			//std::cout << "FPS: " << 1000000 / duration.count() << "\n";
-			// ------------------------------------------------------------------------------------------------
+			Debug::countFPS();
 		}
 		
 		return 0;
