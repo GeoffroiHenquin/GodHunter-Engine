@@ -1,4 +1,4 @@
-#pragma once
+#include "FrameRate.h"
 
 #include <chrono>
 
@@ -10,11 +10,11 @@ namespace Debug {
 
 	float time_for_frame = 0;
 
-	inline int getFPS() { return fps; }
+	int getFPS() { return fps; }
 
-	inline float getTimeForFrame() { return time_for_frame; }
+	float getTimeForFrame() { return time_for_frame; }
 
-	inline void countFPS() {
+	void countFPS() {
 		auto time_now = std::chrono::high_resolution_clock::now();
 		auto duration = duration_cast<std::chrono::microseconds>(time_now - last_time);
 		last_time = time_now;

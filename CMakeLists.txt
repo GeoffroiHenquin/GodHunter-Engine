@@ -13,10 +13,13 @@ project ("GodHunter")
 
 # Include sub-projects.
 
-# SDL3
+# SDL3 (Set as a Static Lib)
 set(SDL_SHARED OFF)
 set(SDL_STATIC ON)
 add_subdirectory(vendor/sdl/SDL)
 
+# GodHunter Engine (Set as a Static Lib)
 add_subdirectory ("GodHunter")
+
+# Game Project (Executable)
 add_subdirectory ("Sandbox")

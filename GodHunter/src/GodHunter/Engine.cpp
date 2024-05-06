@@ -7,9 +7,8 @@
 #include <chrono>
 #include <iostream>
 
-#include "../Debug/Logger.h"
-#include "../Debug/FrameRate.h"
-#include "../Core/OsSpecific/OsSpecificSystem.h"
+#include "../Debug/Debug.h"
+#include "../Core/Core.h"
 
 namespace GodHunter {
 
