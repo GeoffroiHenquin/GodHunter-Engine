@@ -10,6 +10,8 @@
 #include "../Debug/Debug.h"
 #include "../Core/Core.h"
 
+#include "EngineState.h"
+
 namespace GodHunter {
 
 	int startEngine(WindowInformation gameDisplayInfo) {
@@ -24,20 +26,11 @@ namespace GodHunter {
 	int runEngine() {
 
 		// Main Loop
-		bool isRunning = true;
+		bool& isRunning = GodHunter::EngineState::getRunning();
 		while (isRunning) {
 
 			// Handle user input
-			//OsSpecific::HandleEvents();
-			SDL_Event event;
-			SDL_PollEvent(&event);
-			switch (event.type) {
-			case SDL_EVENT_QUIT:
-				isRunning = false;
-				break;
-			default:
-				break;
-			}
+			OsSpecific::HandleEvents();
 
 			// Update game logic and objects
 

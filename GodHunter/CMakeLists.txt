@@ -25,7 +25,7 @@ add_library(GodHunter STATIC
 "src/Debug/FrameRate/FrameRate.cpp"
 
 "src/GodHunter/Engine.h" 
-"src/GodHunter/Engine.cpp")
+"src/GodHunter/Engine.cpp" "src/Core/Events/UserEvents.h" "src/Core/Events/UserEvents.cpp" "src/Core/Events/EngineEvents.h" "src/GodHunter/EngineState.h" "src/GodHunter/EngineState.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET GodHunter PROPERTY CXX_STANDARD 20)
