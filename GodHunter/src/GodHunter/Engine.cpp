@@ -14,16 +14,19 @@
 
 namespace GodHunter {
 
-	int startEngine(WindowInformation gameDisplayInfo) {
+	WindowInformation gameDisplayInfo;
+
+	void loadWindowInformation(WindowInformation _gameDisplayInfo) {
+		gameDisplayInfo = _gameDisplayInfo;
+	}
+
+	int runEngine() {
+
 		// Init Engine
 		OsSpecific::InitOsSpecificSystems();
 
 		// Create a Window
 		OsSpecific::CreateDisplay(gameDisplayInfo);
-		return 0;
-	}
-
-	int runEngine() {
 
 		// Main Loop
 		bool& isRunning = GodHunter::EngineState::getRunning();
@@ -41,10 +44,6 @@ namespace GodHunter {
 			Debug::countFPS();
 		}
 		
-		return 0;
-	}
-
-	int stopEngine() {
 		// End Main
 		OsSpecific::CloseOsSpecificSystems();
 		return 0;

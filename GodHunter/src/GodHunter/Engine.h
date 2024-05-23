@@ -3,10 +3,8 @@
 
 namespace GodHunter {
 
-	int startEngine(WindowInformation gameDisplayInfo);
+	void loadWindowInformation(WindowInformation gameDisplayInfo);
 
 	int runEngine();
-
-	int stopEngine();
 
 }

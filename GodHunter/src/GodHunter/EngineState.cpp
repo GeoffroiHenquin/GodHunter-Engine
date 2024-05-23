@@ -8,6 +8,7 @@ namespace GodHunter {
 		bool Running = true;
 
 		bool& getRunning() {
+			Running = true;
 			return Running;
 		}
 
