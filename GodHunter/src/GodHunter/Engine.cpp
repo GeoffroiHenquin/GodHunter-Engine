@@ -10,34 +10,30 @@
 #include "../Debug/Debug.h"
 #include "../Core/Core.h"
 
+#include "EngineState.h"
+
 namespace GodHunter {
 
-	int startEngine(WindowInformation gameDisplayInfo) {
+	WindowInformation gameDisplayInfo;
+
+	void loadWindowInformation(WindowInformation _gameDisplayInfo) {
+		gameDisplayInfo = _gameDisplayInfo;
+	}
+
+	int runEngine() {
+
 		// Init Engine
 		OsSpecific::InitOsSpecificSystems();
 
 		// Create a Window
 		OsSpecific::CreateDisplay(gameDisplayInfo);
-		return 0;
-	}
-
-	int runEngine() {
 
 		// Main Loop
-		bool isRunning = true;
+		bool& isRunning = GodHunter::EngineState::getRunning();
 		while (isRunning) {
 
 			// Handle user input
-			//OsSpecific::HandleEvents();
-			SDL_Event event;
-			SDL_PollEvent(&event);
-			switch (event.type) {
-			case SDL_EVENT_QUIT:
-				isRunning = false;
-				break;
-			default:
-				break;
-			}
+			OsSpecific::HandleEvents();
 
 			// Update game logic and objects
 
@@ -48,10 +44,6 @@ namespace GodHunter {
 			Debug::countFPS();
 		}
 		
-		return 0;
-	}
-
-	int stopEngine() {
 		// End Main
 		OsSpecific::CloseOsSpecificSystems();
 		return 0;
