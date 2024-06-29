@@ -19,7 +19,7 @@ There are 2 ways to achieve this:
 
 ...
 
-#endif  // PROJECTNAME_PATH_FILE_H_
+#endif // PROJECTNAME_PATH_FILE_H_
 ```
 
 The option 1 (`#pragma once`) is not in the standard and does not act the same for every compilers. Therefore, the option 2 (`define guard`) should be prioritized.

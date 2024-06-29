@@ -1,9 +1,8 @@
 /**
- * @file godhunter.h
+ * @file engine.cpp
  * This file is part of the GodHunter Engine
  *
- * This file is used for inclusion. 
- * It will be used to include the various header files of the engine.
+ * This file implement the various engine functions.
  *
  * MIT License
  *
@@ -29,10 +28,8 @@
  *
  */
 
-#ifndef GODHUNTER_SRC_GODHUNTER_H_
-#define GODHUNTER_SRC_GODHUNTER_H_
-
-// Related header
+ // Related header
+#include "engine.h"
 
 // C system headers
 
@@ -41,8 +38,58 @@
 // Third party libraries headers
 
 // Project headers
-#include "engine.h"
 
 // Exceptions
 
-#endif  // GODHUNTER_SRC_GODHUNTER_H_
+
+namespace godhunter
+{
+
+	GodHunterEngine::GodHunterEngine()
+	{
+	}
+
+	GodHunterEngine::~GodHunterEngine()
+	{
+	}
+
+	/**
+	 * Execute the main loop and should only be called once.
+	 *
+	 * @return void
+	 */
+	void GodHunterEngine::run()
+	{
+
+		// TODO: Start engine and load game.
+		initHumanInterfaceDevices();
+		GUIWindowInformation window_information = { (char*)"My Game", 
+			500, 400, 
+			window_border_default,
+			window_capture_default,
+			window_focus_default,
+			window_grab_default,
+			window_position_default,
+			window_quality_default,
+			window_resize_default,
+			window_size_default,
+			window_system_default,
+			window_type_default
+		};
+		this->m_game_window.createWindow(window_information);
+
+		while (this->m_running)
+		{
+			// TODO: Handle events and inputs.
+			// TODO: Handle game logic.
+			// TODO: Handle rendering.
+			// TODO: Handle timing for next frame.
+		}
+
+		// TODO: End the engine and clean memory before ending the program.
+		this->m_game_window.destroyWindow();
+		closeHumanInterfaceDevices();
+
+	}
+
+} // namespace godhunter

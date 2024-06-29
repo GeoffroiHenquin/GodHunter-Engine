@@ -1,9 +1,8 @@
 /**
- * @file godhunter.h
+ * @file engine.h
  * This file is part of the GodHunter Engine
  *
- * This file is used for inclusion. 
- * It will be used to include the various header files of the engine.
+ * This file contains a class that represent the engine itself.
  *
  * MIT License
  *
@@ -29,10 +28,7 @@
  *
  */
 
-#ifndef GODHUNTER_SRC_GODHUNTER_H_
-#define GODHUNTER_SRC_GODHUNTER_H_
-
-// Related header
+ // Related header
 
 // C system headers
 
@@ -41,8 +37,46 @@
 // Third party libraries headers
 
 // Project headers
-#include "engine.h"
+#include "human_interface_devices.h"
 
 // Exceptions
 
-#endif  // GODHUNTER_SRC_GODHUNTER_H_
+#ifndef GODHUNTER_SRC_ENGINE_H_
+#define GODHUNTER_SRC_ENGINE_H_
+
+namespace godhunter
+{
+
+	/**
+	 * Class - GodHunterEngine
+	 *
+	 * Represent the engine and handle the main loop. It's a standard implementation. 
+	 * For more customisation, users can create their own engine class.
+	 *
+	 * GodHunterEngine gh_engine;
+	 * gh_engine.run();
+	 */
+	class GodHunterEngine
+	{
+	private:
+		// m_running is used in the function GodHunterEngine::run(). While it's true, the engine will render frames.
+		bool m_running = true;
+
+		// m_game_window is the window of the game.
+		GUIWindow m_game_window;
+
+	public:
+		GodHunterEngine();
+		~GodHunterEngine();
+
+		/**
+		 * Execute the main loop and should only be called once.
+		 * 
+		 * @return void
+		 */
+		void run();
+	}; // class GodHunterEngine
+
+} // namespace godhunter
+
+#endif // GODHUNTER_SRC_ENGINE_H_

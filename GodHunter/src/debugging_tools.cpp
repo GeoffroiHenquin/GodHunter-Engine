@@ -1,9 +1,8 @@
 /**
- * @file godhunter.h
+ * @file debugging_tools.cpp
  * This file is part of the GodHunter Engine
  *
- * This file is used for inclusion. 
- * It will be used to include the various header files of the engine.
+ * This file implements the various debbuging features declared in debbugging_tools.h.
  *
  * MIT License
  *
@@ -29,10 +28,8 @@
  *
  */
 
-#ifndef GODHUNTER_SRC_GODHUNTER_H_
-#define GODHUNTER_SRC_GODHUNTER_H_
-
-// Related header
+ // Related header
+#include "debugging_tools.h"
 
 // C system headers
 
@@ -41,8 +38,6 @@
 // Third party libraries headers
 
 // Project headers
-#include "engine.h"
 
 // Exceptions
 
-#endif  // GODHUNTER_SRC_GODHUNTER_H_
