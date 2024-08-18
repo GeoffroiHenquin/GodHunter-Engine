@@ -3,29 +3,7 @@
 #
 
 # Add source to this project's executable.
-add_library(GodHunter STATIC 
-"src/GodHunter.h"
-"src/Core/Core.h"
-"src/Debug/Debug.h"
-
-"src/Core/OsSpecific/OsSpecificSystem.h"
-"src/Core/OsSpecific/OsSpecificClock.cpp"
-"src/Core/OsSpecific/OsSpecificDisplay.cpp"
-"src/Core/OsSpecific/OsSpecificEvent.cpp"
-"src/Core/OsSpecific/OsSpecificAudio.cpp"
-"src/Core/OsSpecific/OsSpecificSystem.cpp"
-
-"src/Core/Structures/WindowInformation.h"
-"src/Core/Structures/Color.h"
-"src/Core/Structures/Event.h"
-
-"src/Debug/Logger/Logger.h"
-"src/Debug/Logger/Logger.cpp"
-"src/Debug/FrameRate/FrameRate.h"
-"src/Debug/FrameRate/FrameRate.cpp"
-
-"src/GodHunter/Engine.h" 
-"src/GodHunter/Engine.cpp" "src/Core/Events/UserEvents.h" "src/Core/Events/UserEvents.cpp" "src/Core/Events/EngineEvents.h" "src/GodHunter/EngineState.h" "src/GodHunter/EngineState.cpp")
+add_library(GodHunter STATIC "src/godhunter.h" "src/engine.h" "src/engine.cpp" "src/human_interface_devices.h" "src/human_interface_devices.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET GodHunter PROPERTY CXX_STANDARD 20)
