@@ -28,7 +28,7 @@
  *
  */
 
- // Related header
+// Related header
 #include "human_interface_devices.h"
 
 // C system headers
@@ -70,7 +70,7 @@ namespace godhunter
 	 * Struct - GUIWindowDataContainer
 	 *
 	 * This struct will contain a graphic window provided by a third party library.
-	 * WARNING: this struct should only be defined and used in "osspecific_gui.h". This is done in order to avoid dependencies.
+	 * WARNING: this struct should only be defined and used in "human_interface_devices.cpp". This is done in order to avoid dependencies.
 	 */
 	struct GUIWindowDataContainer
 	{

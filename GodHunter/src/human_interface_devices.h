@@ -28,6 +28,18 @@
  *
  */
 
+// Related header
+
+// C system headers
+
+// C++ standard library headers
+
+// Third party libraries headers
+
+// Project headers
+
+// Exceptions
+
 #ifndef GODHUNTER_SRC_HUMAN_INTERFACE_DEVICES_H_
 #define GODHUNTER_SRC_HUMAN_INTERFACE_DEVICES_H_
 
@@ -52,7 +64,7 @@ namespace godhunter
 	 * Struct - GUIWindowDataContainer
 	 *
 	 * This struct will contain a graphic window provided by a third party library.
-	 * WARNING: this struct should only be defined and used in "osspecific.h". This is done in order to avoid dependencies.
+	 * WARNING: this struct should only be defined and used in "human_interface_devices.cpp". This is done in order to avoid dependencies.
 	 */
 	struct GUIWindowDataContainer;
 
@@ -114,7 +126,7 @@ namespace godhunter
 	{
 		window_position_default = 0,
 		window_position_always_on_top = 1, // always on top of other windows
-		window_position_occluded = 2, // window is treated as if it was in the background (dont update/dont render)
+		window_position_occluded = 2 // window is treated as if it was in the background (dont update/dont render)
 	};
 
 	/**
@@ -189,7 +201,7 @@ namespace godhunter
 	{
 		window_visibility_default = 0,
 		window_visibility_transparent = 1, // window is transparent
-		window_visibility_hidden = 2, // window cant be seen / is invisible
+		window_visibility_hidden = 2 // window cant be seen / is invisible
 	};
 
 	/**

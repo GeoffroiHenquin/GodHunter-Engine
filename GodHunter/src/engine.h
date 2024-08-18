@@ -28,7 +28,7 @@
  *
  */
 
- // Related header
+// Related header
 
 // C system headers
 

@@ -28,7 +28,7 @@
  *
  */
 
- // Related header
+// Related header
 #include "engine.h"
 
 // C system headers
@@ -60,7 +60,10 @@ namespace godhunter
 	 */
 	void GodHunterEngine::run()
 	{
-
+		// TODO: Implement Debug features
+		// TODO: Add tests
+		// TODO: Create assets loader
+		// TODO: Create game compiler
 		// TODO: Start engine and load game.
 		initHumanInterfaceDevices();
 		GUIWindowInformation window_information = { (char*)"My Game", 

@@ -3,7 +3,7 @@
 #
 
 # Add source to this project's executable.
-add_library(GodHunter STATIC "src/godhunter.h" "src/engine.h" "src/engine.cpp" "src/human_interface_devices.h" "src/human_interface_devices.cpp" "src/debugging_tools.h" "src/debugging_tools.cpp")
+add_library(GodHunter STATIC "src/godhunter.h" "src/engine.h" "src/engine.cpp" "src/human_interface_devices.h" "src/human_interface_devices.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET GodHunter PROPERTY CXX_STANDARD 20)
