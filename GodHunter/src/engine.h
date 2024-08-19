@@ -65,6 +65,9 @@ namespace godhunter
 		// m_game_window is the window of the game.
 		GUIWindow m_game_window;
 
+		// m_event_system handles the various events and inputs.
+		EventSystem m_event_system;
+
 	public:
 		GodHunterEngine();
 		~GodHunterEngine();

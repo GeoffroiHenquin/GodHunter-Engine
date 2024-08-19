@@ -34,6 +34,7 @@
 // C system headers
 
 // C++ standard library headers
+#include <iostream>
 
 // Third party libraries headers
 
@@ -65,7 +66,11 @@ namespace godhunter
 		// TODO: Create assets loader
 		// TODO: Create game compiler
 		// TODO: Start engine and load game.
+		
+		// Init device interface
 		initHumanInterfaceDevices();
+
+		// Create the Game Window
 		GUIWindowInformation window_information = { (char*)"My Game", 
 			500, 400, 
 			window_border_default,
@@ -84,6 +89,23 @@ namespace godhunter
 		while (this->m_running)
 		{
 			// TODO: Handle events and inputs.
+			m_event_system.handleEvents();
+			this->m_running = !m_event_system.m_operating_system.getEventQuit();
+
+			// Test the event from Keyboard
+			if (m_event_system.m_keyboard.getEventKeyDown('s'))
+			{
+				std::cout << "Button 's' was pressed\n";
+			}
+			if (m_event_system.m_keyboard.getEventKeyPressed('s'))
+			{
+				std::cout << "Button 's' is held down\n";
+			}
+			if (m_event_system.m_keyboard.getEventKeyUp('s'))
+			{
+				std::cout << "Button 's' was released\n";
+			}
+			
 			// TODO: Handle game logic.
 			// TODO: Handle rendering.
 			// TODO: Handle timing for next frame.
