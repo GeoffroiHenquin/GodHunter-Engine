@@ -227,6 +227,43 @@ namespace godhunter
 		SDL_DestroyWindow(this->m_gui_data_container->window);
 	}
 
+	void GUIWindow::startRender()
+	{
+		SDL_SetRenderDrawColor(m_gui_data_container->renderer, 0, 0, 0, 255);
+		SDL_RenderClear(m_gui_data_container->renderer);
+	}
+
+	void GUIWindow::drawRect(int position_x, int position_y, int size, unsigned char color[4])
+	{
+		SDL_FRect rect;
+		rect.x = position_x;
+		rect.y = position_y;
+		rect.w = size;
+		rect.h = size;
+
+		SDL_SetRenderDrawColor(m_gui_data_container->renderer, color[0], color[1], color[2], color[3]);
+		SDL_RenderFillRect(m_gui_data_container->renderer, &rect);
+	}
+
+	void GUIWindow::renderFrame()
+	{
+		SDL_RenderPresent(m_gui_data_container->renderer);
+	}
+
+	int GUIWindow::getWidth()
+	{
+		int w, h;
+		SDL_GetWindowSize(m_gui_data_container->window, &w, &h);
+		return w;
+	}
+
+	int GUIWindow::getHeight()
+	{
+		int w, h;
+		SDL_GetWindowSize(m_gui_data_container->window, &w, &h);
+		return h;
+	}
+
 	//--------------------------------------------------------------------------------------------------------------------------------------
 
 	void EventSystem_OS::refresh()
@@ -307,5 +344,10 @@ namespace godhunter
 				break;
 			}
 		}
+	}
+
+	void delayMilliseconds(int milliseconds_)
+	{
+		SDL_Delay(milliseconds_);
 	}
 }

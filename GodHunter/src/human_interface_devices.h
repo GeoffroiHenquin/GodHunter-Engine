@@ -267,6 +267,15 @@ namespace godhunter
 		 * @return void
 		 */
 		void destroyWindow();
+
+        void startRender();
+
+        void drawRect(int position_x, int position_y, int size, unsigned char color[4]);
+
+        void renderFrame();
+
+        int getWidth();
+        int getHeight();
 	}; // class GUIWindow
 
 	//--------------------------------------------------------------------------------------------------------------------------------------
@@ -580,6 +589,8 @@ namespace godhunter
 	public:
 		void handleEvents();
 	};
+
+    void delayMilliseconds(int milliseconds_);
 
 } // namespace godhunter
 
