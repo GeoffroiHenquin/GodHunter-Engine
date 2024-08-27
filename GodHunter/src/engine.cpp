@@ -34,6 +34,7 @@
 // C system headers
 
 // C++ standard library headers
+#include <iostream>
 
 // Third party libraries headers
 
@@ -60,14 +61,13 @@ namespace godhunter
 	 */
 	void GodHunterEngine::run()
 	{
-		// TODO: Implement Debug features
-		// TODO: Add tests
-		// TODO: Create assets loader
-		// TODO: Create game compiler
-		// TODO: Start engine and load game.
+		
+		// Init device interface
 		initHumanInterfaceDevices();
+
+		// Create the Game Window
 		GUIWindowInformation window_information = { (char*)"My Game", 
-			500, 400, 
+			1600, 900, 
 			window_border_default,
 			window_capture_default,
 			window_focus_default,
@@ -81,12 +81,25 @@ namespace godhunter
 		};
 		this->m_game_window.createWindow(window_information);
 
+		// TODO: add stuff to load a scene
+		m_entity_system.loadScene(0);
+
 		while (this->m_running)
 		{
-			// TODO: Handle events and inputs.
-			// TODO: Handle game logic.
+			// Handle events and inputs.
+			m_event_system.handleEvents();
+			this->m_running = !m_event_system.m_operating_system.getEventQuit();
+			
+			// Handle game logic.
+			m_entity_system.handleGameLogic(m_event_system);
+
 			// TODO: Handle rendering.
+			m_game_window.startRender();
+			m_entity_system.renderFrame(m_game_window);
+			m_game_window.renderFrame();
+
 			// TODO: Handle timing for next frame.
+			delayMilliseconds(20);
 		}
 
 		// TODO: End the engine and clean memory before ending the program.

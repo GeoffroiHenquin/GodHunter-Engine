@@ -1,8 +1,8 @@
 /**
- * @file engine.h
+ * @file [my_file.h]
  * This file is part of the GodHunter Engine
  *
- * This file contains a class that represent the engine itself.
+ * [Description of the file]
  *
  * MIT License
  *
@@ -28,7 +28,7 @@
  *
  */
 
-// Related header
+ // Related header
 
 // C system headers
 
@@ -37,52 +37,14 @@
 // Third party libraries headers
 
 // Project headers
-#include "human_interface_devices.h"
-#include "entity_system.h"
 
 // Exceptions
 
-#ifndef GODHUNTER_SRC_ENGINE_H_
-#define GODHUNTER_SRC_ENGINE_H_
-
-namespace godhunter
+class MonoChromeSprite
 {
-
-	/**
-	 * Class - GodHunterEngine
-	 *
-	 * Represent the engine and handle the main loop. It's a standard implementation. 
-	 * For more customisation, users can create their own engine class.
-	 *
-	 * GodHunterEngine gh_engine;
-	 * gh_engine.run();
-	 */
-	class GodHunterEngine
-	{
-	private:
-		// m_running is used in the function GodHunterEngine::run(). While it's true, the engine will render frames.
-		bool m_running = true;
-
-		// m_game_window is the window of the game.
-		GUIWindow m_game_window;
-
-		// m_event_system handles the various events and inputs.
-		EventSystem m_event_system;
-
-		EntitySystem m_entity_system;
-
-	public:
-		GodHunterEngine();
-		~GodHunterEngine();
-
-		/**
-		 * Execute the main loop and should only be called once.
-		 * 
-		 * @return void
-		 */
-		void run();
-	}; // class GodHunterEngine
-
-} // namespace godhunter
-
-#endif // GODHUNTER_SRC_ENGINE_H_
+public:
+	unsigned char color[4] = { 0, 0, 0, 0 };
+	unsigned int width = 0;
+	unsigned int height = 0;
+	bool* grid;
+};

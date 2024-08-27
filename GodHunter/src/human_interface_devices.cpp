@@ -227,4 +227,127 @@ namespace godhunter
 		SDL_DestroyWindow(this->m_gui_data_container->window);
 	}
 
+	void GUIWindow::startRender()
+	{
+		SDL_SetRenderDrawColor(m_gui_data_container->renderer, 0, 0, 0, 255);
+		SDL_RenderClear(m_gui_data_container->renderer);
+	}
+
+	void GUIWindow::drawRect(int position_x, int position_y, int size, unsigned char color[4])
+	{
+		SDL_FRect rect;
+		rect.x = position_x;
+		rect.y = position_y;
+		rect.w = size;
+		rect.h = size;
+
+		SDL_SetRenderDrawColor(m_gui_data_container->renderer, color[0], color[1], color[2], color[3]);
+		SDL_RenderFillRect(m_gui_data_container->renderer, &rect);
+	}
+
+	void GUIWindow::renderFrame()
+	{
+		SDL_RenderPresent(m_gui_data_container->renderer);
+	}
+
+	int GUIWindow::getWidth()
+	{
+		int w, h;
+		SDL_GetWindowSize(m_gui_data_container->window, &w, &h);
+		return w;
+	}
+
+	int GUIWindow::getHeight()
+	{
+		int w, h;
+		SDL_GetWindowSize(m_gui_data_container->window, &w, &h);
+		return h;
+	}
+
+	//--------------------------------------------------------------------------------------------------------------------------------------
+
+	void EventSystem_OS::refresh()
+	{
+		this->m_quit = false;
+	}
+
+	void EventSystem_OS::setEventQuit(bool quit_)
+	{
+		this->m_quit = quit_;
+	}
+
+	bool EventSystem_OS::getEventQuit()
+	{
+		return this->m_quit;
+	}
+
+	//--------------------------------------------------------------------------------------------------------------------------------------
+
+	void EventSystem_Keyboard::refresh()
+	{
+		for (auto& [_, v] : m_key_down) v = false;
+		for (auto& [_, v] : m_key_up) v = false;
+	}
+
+	void EventSystem_Keyboard::setEventKeyDown(char key_)
+	{
+		this->m_key_down[key_] = true;
+		this->m_key_pressed[key_] = true;
+	}
+
+	void EventSystem_Keyboard::setEventKeyUp(char key_)
+	{
+		this->m_key_pressed[key_] = false;
+		this->m_key_up[key_] = true;
+	}
+
+	bool EventSystem_Keyboard::getEventKeyDown(char key_)
+	{
+		return m_key_down[key_];
+	}
+
+	bool EventSystem_Keyboard::getEventKeyPressed(char key_)
+	{
+		return m_key_pressed[key_];
+	}
+
+	bool EventSystem_Keyboard::getEventKeyUp(char key_)
+	{
+		return m_key_up[key_];
+	}
+
+	//--------------------------------------------------------------------------------------------------------------------------------------
+
+	void EventSystem::handleEvents()
+	{
+		// Refresh the state of the various events.
+		m_operating_system.refresh();
+		m_keyboard.refresh();
+
+		// Poll Events
+		SDL_Event event;
+		while (SDL_PollEvent(&event))
+		{
+			switch (event.type)
+			{
+			case SDL_EVENT_QUIT: /**< User-requested quit */
+				m_operating_system.setEventQuit(true);
+				break;
+				// Keyboard events
+			case SDL_EVENT_KEY_DOWN:
+				m_keyboard.setEventKeyDown(event.key.keysym.sym);
+				break;
+			case SDL_EVENT_KEY_UP:
+				m_keyboard.setEventKeyUp(event.key.keysym.sym);
+				break;
+			default:
+				break;
+			}
+		}
+	}
+
+	void delayMilliseconds(int milliseconds_)
+	{
+		SDL_Delay(milliseconds_);
+	}
 }
