@@ -1,0 +1,12 @@
+Start by creating the game logic and core mechanics.
+	- Forget about assets, graphics, and other non-essential elements for now
+	- Focus on getting a playable prototype up and running as quickly as possible.
+	- Should work in a simple console application or basic windowed app.
+
+There should be 2 scenes: Menu and Game.
+	- Menu scene should have options to New Game, Load Game, Settings, and Exit.
+	- Game scene should have basic interaction mechanics.
+
+Description of the game and its core mechanics.
+	- Its a FNAF inspired Tycoon game in which the player manages a Fazbear's Pizza location.
+	- 

@@ -1,0 +1,17 @@
+This will be a list of required features and libraries for the game.
+
+1. Window and Graphics
+- SDL3: For creating the window and renderer.
+- SDL_image: For loading and displaying images.
+- SDL_ttf: For rendering text.
+- OpenGL: For advanced graphics rendering (optional).
+- ImGui: For creating the user interface.
+- ImGui-SFML or ImGui-SDL: For integrating ImGui with SDL.
+
+2. Input Handling
+- SDL3: For handling keyboard and mouse input.
+
+3. Audio
+- SDL_mixer: For playing sound effects and music.
+
+4.

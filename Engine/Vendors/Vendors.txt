@@ -1,0 +1,1 @@
+The 'Engine/Vendors/' folder will contain the various libraries that our project might use.
