@@ -1,0 +1,52 @@
+The idea for the game is to create a FNAF Tycoon game, where the player can build and manage 
+their own Freddy Fazbear's Pizza location. The player will be able to design their own animatronics, 
+set up the layout of the restaurant, and manage the day-to-day operations. 
+
+Here is a list ideas and potential features for the game:
+
+1. The goal of the game should be to make as much money as possible.
+	- The player can earn money by attracting customers, selling food and drinks, and hosting events.
+	- The player can also earn money by completing special challenges and objectives.
+	- The player can use the money to upgrade their restaurant, buy new animatronics, and unlock new features.
+	- The player can loose money in lawsuits, losing reputation, etc.
+	- The player can go bankrupt and lose the game if they run out of money.
+
+2. The player should be able to customize their restaurant.
+	- The player can choose the layout of the restaurant, including the placement of tables, chairs, and decorations.
+	- The player can choose the color scheme and theme of the restaurant.
+	- The player can choose the type of food and drinks that are sold in the restaurant.
+	- The player can choose the type of animatronics that are used in the restaurant.
+
+3. The player should be able to manage the day-to-day operations of the restaurant.
+	- The player can hire and fire employees, including cooks, waitstaff, and security guards.
+	- The player can set the prices of food and drinks.
+	- The player can set the hours of operation for the restaurant.
+	- The player can manage the inventory of food and drinks.
+
+4. The player should be able to design and customize their own animatronics.
+	- The player can choose the appearance of the animatronics, including their color, size, and shape.
+	- The player can choose the type of animatronics, including Freddy, Bonnie, Chica, Foxy, and others.
+	- The player can choose the behavior of the animatronics, including their movement patterns and attack strategies.
+	- The player can upgrade the animatronics with new features and abilities.
+
+5. The player should be able to progress through the game
+	- the player would start with a small, basic restaurant and work their way up to a large, successful franchise.
+	- Maybe the player could unlock new locations, animatronics, and features as they progress through the game.
+
+6. The player could have a boss that explains the game and gives them objectives to complete.
+	- The boss could be a character from the FNAF series, such as William Afton or Henry Emily.
+	- The boss could give the player tips and advice on how to run their restaurant.
+
+7. The game could have a day and night cycle.
+	- During the day, the player would manage the restaurant and attract customers.
+	- During the night, the player would have to defend the restaurant from animatronic attacks.
+	- The player could set up security measures, such as cameras and alarms, to protect the restaurant.
+
+8. The game could have a reputation system.
+	- The player's reputation would affect the number of customers that visit the restaurant.
+	- The player could improve their reputation by providing good service, attracting customers, and completing objectives.
+	- The player could lose reputation by providing poor service, losing customers, and failing objectives.
+
+9. Objects in the restaurant could be interactive.
+	- An arcade machine could have a mini-game that the player can play to earn extra money.
+
